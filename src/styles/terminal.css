@@ -1,0 +1,73 @@
+.terminal {
+  position: fixed; inset: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(5, 7, 8, 0.55);
+  backdrop-filter: blur(2px);
+}
+.terminal[hidden] { display: none; }
+
+.term-frame {
+  width: min(760px, calc(100vw - 2rem));
+  height: min(460px, calc(100vh - 4rem));
+  background: var(--void);
+  border: 0.5px solid var(--grid);
+  border-radius: 10px;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  color: var(--phosphor);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+}
+
+.term-titlebar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.55rem 1rem;
+  border-bottom: 0.5px solid var(--grid);
+  color: var(--phosphor-dim);
+  font-size: var(--text-label);
+  letter-spacing: 0.08em;
+  user-select: none;
+}
+.term-close {
+  background: none; border: none; color: var(--phosphor-dim);
+  font-size: 1.1rem; cursor: pointer; padding: 0 0.25rem; line-height: 1;
+}
+.term-close:hover { color: var(--phosphor); }
+
+.term-scroll { flex: 1; overflow-y: auto; padding: 1rem 1.25rem; }
+.term-output { white-space: pre-wrap; word-break: break-word; line-height: 1.55; }
+.term-output .dim { color: var(--phosphor-dim); }
+.term-output .sig { color: var(--signal); }
+.term-output .warn { color: var(--signal-warm); }
+.term-output .err { color: #FF7B72; }
+.term-output .cmd-echo { color: var(--phosphor); }
+.term-output .cmd-echo::before { content: '$ '; color: var(--phosphor-dim); }
+
+.term-inputline { display: flex; align-items: center; gap: 0.6em; margin-top: 0.25rem; }
+.term-prompt { color: var(--signal); }
+#term-input {
+  flex: 1; background: none; border: none; outline: none;
+  font: inherit; color: var(--phosphor);
+  caret-color: var(--signal);
+  padding: 0;
+}
+
+.term-cursor {
+  display: inline-block; width: 0.55em; height: 1.1em;
+  background: var(--signal); vertical-align: -0.15em;
+  animation: blink 1.06s steps(1) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* progress bar for install sequence */
+.term-bar { color: var(--signal); }
+
+@media (max-width: 720px) {
+  .terminal { align-items: flex-end; }
+  .term-frame {
+    width: 100vw; height: 78vh;
+    border-radius: 14px 14px 0 0;
+    border-left: none; border-right: none; border-bottom: none;
+  }
+}

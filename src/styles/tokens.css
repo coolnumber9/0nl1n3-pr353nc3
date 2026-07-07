@@ -1,0 +1,43 @@
+:root {
+  /* CV mode — paper */
+  --paper: #FAFAF7;
+  --ink: #1A1D1E;
+  --ink-soft: #5C6366;
+  --rule: #D9D9D2;
+  --accent: #0E7C66;
+  --chip-bg: #F3F3EE;
+
+  /* Story mode + terminal — void */
+  --void: #090B0C;
+  --phosphor: #E8ECEB;
+  --phosphor-dim: #8A9491;
+  --signal: #2DE0B5;
+  --signal-warm: #FFB454;
+  --grid: #17201E;
+  --void-panel: #0E1113;
+
+  /* Type */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  --text-hero: clamp(2.2rem, 6vw, 4.2rem);
+  --text-h2: clamp(1.4rem, 3vw, 2.1rem);
+  --text-body: 1.0625rem;
+  --text-mono: 0.9375rem;
+  --text-label: 0.75rem;
+
+  /* Rhythm */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6.5rem;
+
+  --measure: 68ch;
+  --wide: 1120px;
+
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 160ms;
+  --dur-base: 240ms;
+}

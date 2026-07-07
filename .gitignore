@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+
+# Private story content — only the sealed payload ships
+content/story/
+content/projects/
+tools/codes.local.json

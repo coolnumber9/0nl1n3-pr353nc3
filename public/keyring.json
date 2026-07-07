@@ -1,0 +1,24 @@
+{
+  "kdf": {
+    "name": "PBKDF2",
+    "hash": "SHA-256",
+    "iterations": 600000
+  },
+  "entries": [
+    {
+      "salt": "D3rslniTVJzUA+AfRgeWlg==",
+      "iv": "2/oJ5nM4Er7gdx0v",
+      "wrapped": "NBhk+3bKD6DY8OEWkelv7Cs11asL2cViT7kkf+vcdj9AAq2MENuAmWiX6dw6SxUT/yS8PYuJmMggLaVf93W86T2QYHXNL13LcUHtilllbFv0M7T3XJM5tadA+LCl8Gd1CtjqaisjMeCJJYTEhKh/KNry+gyKCNrjzWavJBNN5ZnWtICKLsjDHKgjGr7cjcw="
+    },
+    {
+      "salt": "GgUP19bH+KBKcJtYo1T1ow==",
+      "iv": "2vUupOjNPnw30uNU",
+      "wrapped": "SMoAKfRvPwkqCkHzG4F9NKHOYVH6UZz3/t9XGZEmJrqy8YYb7e7qYKxfrP8hjXOmh0pCrYd9c7lZJU5v+lmcBQ2it3oDINdXz5FH+wKTIUl21nSNMJOwmo1rL9CZOhNHEVgfC0KWyM7KQhuuFJPQorhulwtsKMdaIfSuldbGP/KhwIxQnjYSaTlfpPnOTikkPhjMwfE="
+    },
+    {
+      "salt": "95/+9x0Uf2NAD3UyQ1MYNQ==",
+      "iv": "zG/rTDWJ4pl+2EQ2",
+      "wrapped": "TbyWqxvRcaReJWEd5jQ1xHFBJEweXQ33c03W6hpwi9f8SCyrlnvybkAuVXadzwqjA6rKgcQmUKIjNn3CD6p4LqSb0cZEuvqSK1ChUqbplKMwq0bF2K8cSJ01+6NAOHUbuZYpqkl8XKZw+zO1Ua/Lmz8dtYb44kp0UpztT5tGPHxXdpbwohf2pBVmyJsJujfi"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "name": "Kristoffer Dominic Amora",
+  "title": "Engineering Leader",
+  "thesis": "Building at the hardware–software seam for 21 years.",
+  "tagline": {
+    "line1": "while (alive) { learn(); }",
+    "line2pre": "providing meaning",
+    "line2post": "technology leadership"
+  },
+  "links": {
+    "email": "kdamora@gmail.com",
+    "linkedin": "https://linkedin.com/in/kdamora",
+    "github": "https://github.com/coolnumber9"
+  },
+  "stats": [
+    { "value": "21", "label": "yrs" },
+    { "value": "2", "label": "US patents" },
+    { "value": "50+", "label": "engineers hired" },
+    { "value": "75K+", "label": "devices shipped" }
+  ],
+  "summary": "Engineering leader with 21 years of experience, including 8+ years managing teams across healthcare, wellness-tech, and retail. Patent-holding inventor with experience in cloud, web, and embedded systems, delivering scalable solutions from startups to Fortune 10 companies, and recent hands-on training in LLM-based agentic systems and responsible Generative AI.",
+  "competencies": [
+    { "name": "Tech + people leadership", "detail": "Engineering team leadership and agile delivery; people leadership; recruitment and engineering team building at scale" },
+    { "name": "Innovation and R&D", "detail": "Digital health, wellness tech, retail innovation; patent-holding inventor with hands-on R&D experience" },
+    { "name": "Software, web, embedded", "detail": "Scalable software & systems architecture (cloud to edge); embedded systems, BLE/LoRa, and firmware development" }
+  ],
+  "skills": [
+    { "group": "Delivery & management", "items": "Agile Scrum, Kanban, Rally, Atlassian JIRA, Miro, MermaidJS, Parabol, Linear" },
+    { "group": "Software & cloud", "items": ".NET Core, C#, Python, Ionic, PWA, TypeScript, Angular, Node.js, Sauce Labs, Datadog, Docker, Cypress, CI/CD, Snyk, AWS, Azure, Git, GitHub" },
+    { "group": "Generative AI", "items": "Retrieval-Augmented Generation (RAG), LangGraph, LangChain, LLM tools, ReAct agentic patterns, Responsible AI" },
+    { "group": "Embedded", "items": "C, C++, Python, Bluetooth LE, LoRa, LoRaWAN, AcSIP S76S SoM, nRF52xxx, Zephyr RTOS, Nordic Semiconductor, Microchip, Qualcomm, Quectel" }
+  ],
+  "experience": [
+    {
+      "role": "Software Engineering Manager",
+      "org": "Optum",
+      "period": "Jul 2022 — present",
+      "bullets": [
+        "Led a 7-member backend engineering team for UnitedHealthcare Motion, a wellness incentive platform by UnitedHealth Group (#3 on the 2025 Fortune 500), enabling 800K+ members to earn up to $1,000 annually through wearable-tracked fitness goals.",
+        "Delivered key features including an employer-facing dashboard and multi-factor authentication (MFA) hardening.",
+        "Supported the transition and decommissioning of UHC Motion after a decade of service — seamless member migration and backend integration into the new UHC Rewards platform.",
+        "Currently lead a QA-focused team managing automated and manual regression testing for the UHC Rewards module of the UHC mobile app — ranked #4 in the App Store's Medical category.",
+        "Pioneered a technical recruitment strategy: 50+ engineers hired in ~10 months to support rapid team expansion in Cebu, Philippines."
+      ]
+    },
+    {
+      "role": "IT Manager — SW Development",
+      "org": "Chong Hua Hospital",
+      "period": "Oct 2019 — Jun 2022",
+      "bullets": [
+        "From Business Systems Analyst to IT Manager, leading a software team delivering digital health solutions for patient-centered care.",
+        "Drove the IT division's Agile transformation: Scrum, Kanban, Git, DevOps, automated E2E tests, and security vulnerability scanning across legacy healthcare systems.",
+        "Designed and launched DOKi, a cross-platform PWA adopted by 700+ doctors — real-time patient data, appointments, SMS notifications, and digital professional-fee settlement. 100% adoption in under 9 months.",
+        "Delivered executive dashboards: hospital census, admissions, length of stay, ER activity, searchable case rates by ICD codes.",
+        "Promoted a UX-first culture with design systems and user-centric development for healthcare professionals and patients."
+      ]
+    },
+    {
+      "role": "Co-Founder",
+      "org": "SenseServ Labs",
+      "period": "Aug 2018 — Jan 2020",
+      "bullets": [
+        "Co-founded a startup advancing IoT and Industry 4.0 in the Philippines.",
+        "Built low-power remote monitoring prototypes on Semtech LoRa and Bluetooth LE over the Nordic nRF stack — similar to what later gained traction as Meshtastic."
+      ]
+    },
+    {
+      "role": "SW / Web / Embedded / Business Development",
+      "org": "CKDI + Logixt",
+      "period": "Dec 2017 — Aug 2019",
+      "bullets": [
+        "Early-stage startup focused on warehouse automation: AngularJS front-end with MySQL backend for 8 clients, migrating material-handling legacy systems to a modular, portable platform."
+      ]
+    },
+    {
+      "role": "Sr. Firmware / Software Developer, Far East Advance Development Group",
+      "org": "TIMEX",
+      "period": "Apr 2017 — Aug 2017",
+      "bullets": [
+        "Led firmware development of TMX Philippines' first locally developed digital fitness wristband prototype.",
+        "Explored OEM opportunities in the healthcare wellness sector with a cross-functional team."
+      ]
+    },
+    {
+      "role": "Sr. Device Firmware Developer, Rapid R&D",
+      "org": "Fortify Technologies Asia",
+      "period": "Nov 2014 — Feb 2017",
+      "bullets": [
+        "Led R&D of firmware and wireless embedded devices pairing with fitness trackers; onsite engineering with contract manufacturers in Shenzhen, China.",
+        "Shipped 75K+ hardware units developed and manufactured in the Philippines."
+      ]
+    },
+    {
+      "role": "Developer, Health Devices Group",
+      "org": "Savvysherpa",
+      "period": "Aug 2013 — Oct 2014",
+      "bullets": [
+        "Helped build the engineering team; launched the company's first fitness activity tracker within a year.",
+        "Contributed to the formation of Fortify Technologies as a new business unit."
+      ]
+    },
+    {
+      "role": "Tech Lead, Applied Innovation Team",
+      "org": "NCR Corporation",
+      "period": "Feb 2005 — Aug 2013",
+      "bullets": [
+        "Led development of low-level software tools for NCR barcode scanners, cutting customer reliance on technical support by 70%+.",
+        "Scaled the team 200% (8 → 25) in under 2 years as Team Lead — one of NCR Cebu's top-performing teams.",
+        "Led a research sub-team on 5+ year horizon technologies in retail, banking, and hospitality, modeled after Google Labs.",
+        "2 granted US patents plus internal invention disclosures and research papers in HCI, computer vision, and embedded systems.",
+        "Prototyped a vision-based product identification system reducing retail shrinkage and barcode fraud by ~85%."
+      ]
+    }
+  ],
+  "patents": [
+    {
+      "id": "US10650232 B2",
+      "title": "Produce and Non-produce Verification Using Hybrid Scanner",
+      "note": "Granted May 2020. Verifying produce with a low-resolution image scanner by extracting visual features — lines, corners, text, texture, edges — and comparing against known profiles.",
+      "url": "https://patents.google.com/patent/US10650232B2"
+    },
+    {
+      "id": "US8626120 B2",
+      "title": "Methods to Improve Automated Check-in",
+      "note": "Granted Jan 2014. Automated check-in via mobile device: user data is encoded into a scannable code (e.g. QR), read at the check-in location, and transmitted to its database.",
+      "url": "https://patents.google.com/patent/US8626120"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Hospital Digital Transformation & the DOKi App",
+      "role": "IT Manager, Lead SW Dev",
+      "period": "2020 — 2022",
+      "note": "An app offering doctors a new way to view admitted patients, appointments, and notifications, with seamless online professional-fee submission."
+    },
+    {
+      "title": "Bluetooth Smart USB Dongle",
+      "role": "Firmware Engineer, Lead",
+      "period": "2016 — 2017",
+      "note": "BLE + USB HID data bridge between wearables and PCs. 75K+ pieces mass-produced in Laguna (PCBA) and Cebu (final assembly + mass firmware flashing)."
+    },
+    {
+      "title": "Machine Code to Human-readable Interface",
+      "role": "Software Engineer, Lead",
+      "period": "2006 — 2007",
+      "note": "NCR RealScan EEPROM Configuration Tool — 800+ UI components generated at runtime from XML, before XAML made that normal."
+    }
+  ],
+  "awards": [
+    { "title": "2nd Runner-up — Digital Technology for Charities DeepHack Hackathon", "year": "2020" },
+    { "title": "Accepted — MIT–Harvard Medical School Healthcare Innovation Bootcamp", "year": "2018" }
+  ],
+  "volunteering": [
+    { "role": "Initiator / Community Lead", "org": "The Things Network Cebu", "period": "2018 — 2021" },
+    { "role": "Co-Organizer / Co-Community Lead", "org": "IoT Cebu", "period": "2016 — 2020" },
+    { "role": "Contributor, STEM Evangelist, Consultant", "org": "Compass Education", "period": "2016 — 2018" },
+    { "role": "Co-Founder", "org": "Let it ECHO", "period": "2012 — 2019" }
+  ],
+  "education": {
+    "degree": "B.S. Electronics and Communications Engineering",
+    "school": "University of San Carlos — Technological Center"
+  }
+}

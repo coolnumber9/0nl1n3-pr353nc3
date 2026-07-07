@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kristoffer Dominic Amora — Engineering Leader</title>
+  <meta name="description" content="Engineering leader at the hardware–software seam. 21 years, 2 US patents. Providing meaning beyond technology leadership." />
+  <meta property="og:title" content="Kristoffer Dominic Amora — Engineering Leader" />
+  <meta property="og:description" content="while (alive) { learn(); } — providing meaning > technology leadership" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body data-mode="cv">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <main id="main" aria-live="polite">
+    <div id="cv-root"></div>
+    <div id="story-root" hidden></div>
+  </main>
+  <button id="term-chip" class="term-chip" aria-haspopup="dialog" aria-controls="terminal">
+    <span class="chip-text">press <kbd>/</kbd> to talk</span>
+  </button>
+  <div id="terminal" class="terminal" role="dialog" aria-modal="true" aria-label="Terminal" hidden>
+    <div class="term-frame">
+      <div class="term-titlebar">
+        <span class="term-title">kda@midknight:~</span>
+        <button class="term-close" aria-label="Close terminal">×</button>
+      </div>
+      <div class="term-scroll" id="term-scroll">
+        <div id="term-output" class="term-output"></div>
+        <div class="term-inputline">
+          <span class="term-prompt">$</span>
+          <input id="term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal input" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
