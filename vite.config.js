@@ -8,7 +8,7 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 // (story-mode decryption) only runs in secure contexts. Plain `npm run dev`
 // stays http on localhost, which is already a secure context.
 export default defineConfig({
-  base: '/',
+  base: '/0nl1n3-pr353nc3/',
   plugins: process.env.DEV_HTTPS ? [basicSsl()] : [],
   build: {
     target: 'es2020',
