@@ -55,8 +55,8 @@ export function execute(raw, term) {
     case 'whoami':
       return term.printLines([
         ['', 'Kristoffer Dominic Amora — engineering leader at the hardware–software seam.'],
-        ['dim', '21 yrs · 2 US patents · 50+ engineers hired · 75K+ devices shipped'],
-        ['dim', 'life-long learner. providing meaning > technology leadership.'],
+        ['dim', '21 yrs · 2 US patents · 75K+ devices shipped · firmware+software+web'],
+        ['dim', 'life-long learner. providing meaning beyond technology leadership.'],
       ]);
 
     case 'cv':
@@ -108,7 +108,11 @@ export function execute(raw, term) {
       return term.clear();
 
     case 'exit':
-      return term.close();
+    case 'logout':
+    case 'quit':
+      term.printLines([['dim', 'logout']]);
+      setTimeout(() => term.close(), 350);
+      return;
 
     default:
       return term.printLines([
