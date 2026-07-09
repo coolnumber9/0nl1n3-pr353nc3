@@ -1,4 +1,5 @@
 import cv from '../../content/cv.json';
+import { initLockupCycle } from '../fx/lockup-fx.js';
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -102,35 +103,8 @@ export function renderCV(root) {
     </footer>
   </div>`;
 
-  initLockup();
-}
-
-function initLockup() {
-  const gt = document.getElementById('lockup-gt');
-  if (!gt) return;
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let busy = false;
-  const morph = () => {
-    if (busy) return;
-    busy = true;
-    if (reduced) {
-      gt.textContent = 'beyond';
-      gt.classList.add('morphed');
-      setTimeout(() => { gt.textContent = '>'; gt.classList.remove('morphed'); busy = false; }, 1600);
-      return;
-    }
-    const word = 'beyond';
-    let i = 0;
-    gt.classList.add('morphed');
-    const t = setInterval(() => {
-      i += 1;
-      gt.textContent = word.slice(0, i);
-      if (i >= word.length) {
-        clearInterval(t);
-        setTimeout(() => { gt.textContent = '>'; gt.classList.remove('morphed'); busy = false; }, 1600);
-      }
-    }, 85);
-  };
-  gt.closest('.lockup').addEventListener('mouseenter', morph);
-  gt.closest('.lockup').addEventListener('focusin', morph);
+  initLockupCycle({
+    codeEl: root.querySelector('.lockup-code'),
+    gtEl: document.getElementById('lockup-gt'),
+  });
 }

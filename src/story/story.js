@@ -1,5 +1,7 @@
 // Story mode — scrollytelling renderer. GSAP loads lazily on unlock only.
 
+import { initLockupCycle } from '../fx/lockup-fx.js';
+
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -124,7 +126,10 @@ async function renderStory({ story, greeting, audience }) {
 
   window.scrollTo(0, 0);
   await revealSequence(root);
-  initMorph(root);
+  initLockupCycle({
+    codeEl: root.querySelector('.ep-lockup .code'),
+    gtEl: root.querySelector('[data-morph]'),
+  });
   initScroll(root);
 }
 
@@ -152,30 +157,6 @@ async function revealSequence(root) {
     })
   );
   window.removeEventListener('keydown', skip);
-}
-
-function initMorph(root) {
-  const gt = root.querySelector('[data-morph]');
-  if (!gt) return;
-  const word = 'beyond';
-  let expanded = false;
-  setInterval(() => {
-    if (reduced()) { gt.textContent = expanded ? '>' : word; expanded = !expanded; return; }
-    if (!expanded) {
-      let i = 0;
-      const t = setInterval(() => {
-        i += 1;
-        gt.textContent = word.slice(0, i);
-        gt.style.fontStyle = 'italic';
-        if (i >= word.length) clearInterval(t);
-      }, 85);
-      expanded = true;
-    } else {
-      gt.textContent = '>';
-      gt.style.fontStyle = 'normal';
-      expanded = false;
-    }
-  }, 3400);
 }
 
 async function initScroll(root) {
