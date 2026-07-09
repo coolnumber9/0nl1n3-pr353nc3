@@ -15,8 +15,8 @@
   "stats": [
     { "value": "21", "label": "yrs" },
     { "value": "2", "label": "US patents" },
-    { "value": "50+", "label": "engineers hired" },
-    { "value": "75K+", "label": "devices shipped" }
+    { "value": "75K+", "label": "devices shipped" },
+    { "value": "firmware+software+web", "label": "" }
   ],
   "summary": "Engineering leader with 21 years of experience, including 8+ years managing teams across healthcare, wellness-tech, and retail. Patent-holding inventor with experience in cloud, web, and embedded systems, delivering scalable solutions from startups to Fortune 10 companies, and recent hands-on training in LLM-based agentic systems and responsible Generative AI.",
   "competencies": [
