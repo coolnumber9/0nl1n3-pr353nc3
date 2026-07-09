@@ -46,18 +46,23 @@
 
 .term-inputline { display: flex; align-items: center; gap: 0.6em; margin-top: 0.25rem; }
 .term-prompt { color: var(--signal); }
+.term-inputwrap { position: relative; flex: 1; display: flex; }
 #term-input {
   flex: 1; background: none; border: none; outline: none;
   font: inherit; color: var(--phosphor);
-  caret-color: var(--signal);
+  caret-color: transparent; /* replaced by the block cursor below */
   padding: 0;
 }
 
+/* thick block cursor — tracks the real caret via JS */
 .term-cursor {
-  display: inline-block; width: 0.55em; height: 1.1em;
-  background: var(--signal); vertical-align: -0.15em;
+  position: absolute; left: 0; top: 50%;
+  width: 0.6em; height: 1.25em; margin-top: -0.625em;
+  background: var(--signal);
+  pointer-events: none;
   animation: blink 1.06s steps(1) infinite;
 }
+.term-cursor.idle { animation: none; opacity: 0.35; }
 @keyframes blink { 50% { opacity: 0; } }
 
 /* progress bar for install sequence */

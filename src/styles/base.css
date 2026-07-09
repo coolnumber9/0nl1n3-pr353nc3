@@ -57,6 +57,12 @@ body[data-mode="story"] .keyword { color: var(--signal); }
 }
 .term-chip:hover { color: var(--ink); border-color: var(--ink-soft); }
 .term-chip kbd { color: var(--accent); font-family: inherit; }
+/* device-adaptive chip copy: keyboard hint on fine pointers, tap hint on touch */
+.chip-coarse { display: none; }
+@media (pointer: coarse) {
+  .chip-fine { display: none; }
+  .chip-coarse { display: inline; }
+}
 body[data-mode="story"] .term-chip { background: var(--void-panel); border-color: var(--grid); color: var(--phosphor-dim); }
 body[data-mode="story"] .term-chip kbd { color: var(--signal); }
 

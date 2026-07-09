@@ -22,7 +22,8 @@
     <div id="story-root" hidden></div>
   </main>
   <button id="term-chip" class="term-chip" aria-haspopup="dialog" aria-controls="terminal">
-    <span class="chip-text">press <kbd>/</kbd> to talk</span>
+    <span class="chip-text chip-fine">press <kbd>/</kbd> to talk</span>
+    <span class="chip-text chip-coarse"><kbd>/</kbd> tap here to explore more</span>
   </button>
   <div id="terminal" class="terminal" role="dialog" aria-modal="true" aria-label="Terminal" hidden>
     <div class="term-frame">
@@ -34,7 +35,10 @@
         <div id="term-output" class="term-output"></div>
         <div class="term-inputline">
           <span class="term-prompt">$</span>
-          <input id="term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal input" />
+          <span class="term-inputwrap">
+            <input id="term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal input" />
+            <span class="term-cursor" id="term-cursor" aria-hidden="true"></span>
+          </span>
         </div>
       </div>
     </div>

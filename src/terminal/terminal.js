@@ -14,6 +14,7 @@ export function initTerminal() {
   const scroll = document.getElementById('term-scroll');
   const chip = document.getElementById('term-chip');
   const closeBtn = overlay.querySelector('.term-close');
+  const cursor = document.getElementById('term-cursor');
 
   const history = [];
   let hIndex = -1;
@@ -53,6 +54,19 @@ export function initTerminal() {
     },
   };
 
+  // block cursor: native caret is hidden; this keeps the block on the caret
+  const measure = document.createElement('canvas').getContext('2d');
+  const syncCursor = () => {
+    if (!cursor) return;
+    const cs = getComputedStyle(input);
+    measure.font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+    const upto = input.value.slice(0, input.selectionStart ?? input.value.length);
+    cursor.style.transform = `translateX(${measure.measureText(upto).width}px)`;
+  };
+  ['input', 'keyup', 'click'].forEach((ev) => input.addEventListener(ev, syncCursor));
+  input.addEventListener('focus', () => { cursor?.classList.remove('idle'); syncCursor(); });
+  input.addEventListener('blur', () => cursor?.classList.add('idle'));
+
   const echo = (raw) => {
     const div = document.createElement('div');
     div.className = 'cmd-echo';
@@ -69,6 +83,7 @@ export function initTerminal() {
         history.push(raw);
         hIndex = history.length;
       }
+      syncCursor();
       await execute(raw, term);
       scroll.scrollTop = scroll.scrollHeight;
     } else if (e.key === 'ArrowUp') {
