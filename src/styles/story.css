@@ -1,6 +1,6 @@
 .story {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
+  grid-template-columns: minmax(260px, max-content) minmax(0, 1fr);
   max-width: var(--wide);
   margin: 0 auto;
   padding: var(--space-4) var(--space-3) var(--space-6);
@@ -38,7 +38,7 @@
 .story-rail a {
   font-family: var(--font-mono); font-size: 0.8rem;
   color: var(--phosphor-dim); border: none; text-align: left;
-  padding: 0.3rem 0; line-height: 1.4; word-break: break-all;
+  padding: 0.3rem 0; line-height: 1.4; white-space: nowrap;
   border-left: 1px solid var(--grid); padding-left: 0.8rem;
   transition: color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease);
 }
@@ -110,6 +110,7 @@
 .ep-lockup .code .fn { color: var(--phosphor); }
 .ep-lockup .line { font-size: 1.35rem; margin: 0; color: var(--phosphor); }
 .ep-lockup .gt { font-family: var(--font-mono); color: var(--signal); display: inline-block; min-width: 0.7em; }
+.ep-lockup .gt.morphed { font-style: italic; }
 
 .ep-log {
   font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em;
@@ -153,6 +154,7 @@
 @media (max-width: 900px) {
   .story { grid-template-columns: 1fr; padding: var(--space-3) var(--space-2) var(--space-5); }
   .story-rail { position: static; order: -1; overflow-x: auto; }
+  .story-rail a { white-space: normal; word-break: break-all; } /* keep current mobile behavior */
   .story-rail nav { grid-auto-flow: row; }
   .story-greeting { margin-left: 0; width: 100%; }
   .episode { padding: var(--space-4) 0; min-height: auto; }
