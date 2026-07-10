@@ -1,3 +1,5 @@
+<img width="1920" height="1080" alt="kda-portfolio-terminal-03" src="https://github.com/user-attachments/assets/0d9d88f3-30cb-44f0-a28b-6f2d951230d7" />
+
 # kdamora — online CV & portfolio
 
 Two modes. One person.
