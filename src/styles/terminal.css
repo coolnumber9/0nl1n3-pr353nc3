@@ -68,6 +68,33 @@
 /* progress bar for install sequence */
 .term-bar { color: var(--signal); }
 
+/* ---- boot banner: gradient KDA mark + fetch info column ---- */
+.term-banner {
+  display: flex; gap: 2.25rem; align-items: flex-start;
+  margin-bottom: 0.35rem;
+}
+.banner-art { margin: 0; font-family: inherit; font-size: inherit; line-height: 1.25; }
+.banner-art .g1 { color: #2DE0B5; }
+.banner-art .g2 { color: #2BC9A4; }
+.banner-art .g3 { color: #27AC8E; }
+.banner-art .g4 { color: #218C75; }
+.banner-art .g5 { color: #1A6B5B; }
+.banner-art .g6 { color: #134D42; }
+
+.banner-fetch { line-height: 1.5; }
+.fetch-title { color: var(--signal); }
+.fetch-rule { color: var(--grid); }
+.fetch-key { color: var(--signal); display: inline-block; min-width: 9ch; }
+.fetch-val { color: var(--phosphor-dim); }
+
+/* mobile fallback line carries the version; on desktop the SHELL row does */
+@media (min-width: 601px) {
+  .banner-verline .verline-version { display: none; }
+}
+@media (max-width: 600px) {
+  .banner-fetch { display: none; }
+}
+
 @media (max-width: 720px) {
   .terminal { align-items: flex-end; }
   .term-frame {
