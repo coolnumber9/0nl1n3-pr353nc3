@@ -1,6 +1,7 @@
 // Story mode — scrollytelling renderer. GSAP loads lazily on unlock only.
 
 import { initLockupCycle } from '../fx/lockup-fx.js';
+import { initStatusBar } from './statusbar.js';
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -126,11 +127,13 @@ async function renderStory({ story, greeting, audience }) {
 
   window.scrollTo(0, 0);
   await revealSequence(root);
+  // mobile status bar mounts after the reveal beat so the greeting leads
+  const statusbar = initStatusBar(root, story.episodes, { reduced: reduced() });
   initLockupCycle({
     codeEl: root.querySelector('.ep-lockup .code'),
     gtEl: root.querySelector('[data-morph]'),
   });
-  initScroll(root);
+  initScroll(root, statusbar);
 }
 
 /* the one theatrical beat: titles resolve from scrambled glyphs. skippable. */
@@ -159,12 +162,15 @@ async function revealSequence(root) {
   window.removeEventListener('keydown', skip);
 }
 
-async function initScroll(root) {
+async function initScroll(root, statusbar) {
   const bar = root.querySelector('.story-progress');
   const railLinks = [...root.querySelectorAll('[data-rail]')];
   const episodes = [...root.querySelectorAll('.episode')];
 
-  const setActive = (slug) => railLinks.forEach((a) => a.classList.toggle('active', a.dataset.rail === slug));
+  const setActive = (slug) => {
+    railLinks.forEach((a) => a.classList.toggle('active', a.dataset.rail === slug));
+    statusbar?.setCurrent(slug);
+  };
 
   if (reduced()) {
     const io = new IntersectionObserver(

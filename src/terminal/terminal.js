@@ -1,7 +1,7 @@
 import { execute } from './commands.js';
+import { buildBanner } from './banner.js';
 
 const BOOT = [
-  ['dim', 'kda-shell v1.0.0 — last login: from somewhere curious'],
   ['', ''],
   ['', "type 'help' to look around, or paste the command you were given."],
   ['', ''],
@@ -25,7 +25,12 @@ export function initTerminal() {
     printLines(lines) {
       for (const [cls, text] of lines) {
         const div = document.createElement('div');
-        if (cls) div.className = cls;
+        if (cls) {
+          div.className = cls;
+          // 'art' lines are visual glyphs (morse bars, block letters) —
+          // meaningless when read aloud
+          if (cls.split(' ').includes('art')) div.setAttribute('aria-hidden', 'true');
+        }
         div.textContent = text;
         output.appendChild(div);
       }
@@ -44,6 +49,7 @@ export function initTerminal() {
       overlay.hidden = false;
       if (!booted) {
         booted = true;
+        output.appendChild(buildBanner());
         term.printLines(BOOT);
       }
       input.focus();
