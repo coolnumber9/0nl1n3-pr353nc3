@@ -1,4 +1,5 @@
 import { tryUnlock } from '../story/crypto.js';
+import { kdaVersion, MORSE_KDA, BUILD_DATE } from './version.js';
 
 const FILES = {
   'readme.md': [
@@ -81,6 +82,15 @@ export function execute(raw, term) {
       ]);
 
     case 'kda':
+      // the signature scene — deliberately absent from `help`
+      if (args[0] === '--version' || args[0] === '-v') {
+        return term.printLines([
+          ...MORSE_KDA.map((row) => ['sig art', row]),
+          ['', `kda-shell ${kdaVersion()}`],
+          ['dim', `build date ${BUILD_DATE} — still in active development`],
+        ]);
+      }
+    // fall through
     case 'npm':
     case 'bun':
     case 'pip':
