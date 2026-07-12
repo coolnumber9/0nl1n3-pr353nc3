@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="kda-portfolio-terminal-03" src="https://github.com/user-attachments/assets/0d9d88f3-30cb-44f0-a28b-6f2d951230d7" />
+<img width="1920" height="1080" alt="925_1x_shots_so" src="https://github.com/user-attachments/assets/cf557618-643b-48b6-b27e-b1a743e24ca4" />
 
 # kdamora — online CV & portfolio
 
