@@ -151,12 +151,48 @@
 /* decrypt scramble */
 .scramble { color: var(--phosphor-dim); }
 
+/* mobile episode nav — status bar + dropdown (statusbar.js). Hidden on desktop,
+   where the sticky rail does this job. Sits under .story-progress (z 60 > 30),
+   so the signal hairline rides the bar's top edge. */
+.story-statusbar { display: none; }
+
 @media (max-width: 900px) {
-  .story { grid-template-columns: 1fr; padding: var(--space-3) var(--space-2) var(--space-5); }
-  .story-rail { position: static; order: -1; overflow-x: auto; }
-  .story-rail a { white-space: normal; word-break: break-all; } /* keep current mobile behavior */
-  .story-rail nav { grid-auto-flow: row; }
+  .story { grid-template-columns: 1fr; padding: calc(var(--space-3) + 2.6rem) var(--space-2) var(--space-5); }
+  .story-rail { display: none; } /* replaced by the status bar */
   .story-greeting { margin-left: 0; width: 100%; }
-  .episode { padding: var(--space-4) 0; min-height: auto; }
+  .episode { padding: var(--space-4) 0; min-height: auto; scroll-margin-top: 3.4rem; }
   .episode::before, .episode::after { content: none; }
+
+  .story-statusbar {
+    display: block;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 30;
+    background: rgba(14, 17, 19, 0.92);
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    border-bottom: 0.5px solid var(--grid);
+    transition: transform var(--dur-base) var(--ease);
+  }
+  .story-statusbar.hidden { transform: translateY(-100%); }
+
+  .sb-btn {
+    width: 100%; display: flex; align-items: center; gap: 0.6rem;
+    background: none; border: none; cursor: pointer; text-align: left;
+    font-family: var(--font-mono); font-size: var(--text-label); letter-spacing: 0.04em;
+    color: var(--phosphor-dim); padding: 0.7rem var(--space-2);
+  }
+  .sb-mark { flex: 0 0 auto; }
+  .sb-mark rect { fill: var(--signal); }
+  .sb-path { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .sb-path .dir { color: var(--grid); }
+  .sb-cur { color: var(--phosphor); }
+  .sb-caret { color: var(--signal); transition: transform var(--dur-fast) var(--ease); }
+  .story-statusbar[data-open="true"] .sb-caret { transform: rotate(180deg); }
+
+  .sb-menu { display: none; border-top: 0.5px solid var(--grid); padding: 0.4rem 0 0.6rem; max-height: 60vh; overflow-y: auto; }
+  .story-statusbar[data-open="true"] .sb-menu { display: block; }
+  .sb-menu a {
+    display: block; padding: 0.45rem var(--space-2); font-size: 0.8rem; text-decoration: none;
+    color: var(--phosphor-dim); border-left: 2px solid transparent; word-break: break-all;
+  }
+  .sb-menu .dir { color: var(--grid); }
+  .sb-menu a.active { color: var(--signal); border-left-color: var(--signal); }
 }
