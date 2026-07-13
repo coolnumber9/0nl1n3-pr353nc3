@@ -14,7 +14,12 @@ const ART = [
   '╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝',
 ];
 
-export function buildBanner() {
+const relTime = (t) => {
+  const s = Math.round((Date.now() - t) / 1000);
+  return s < 90 ? 'moments ago' : `${Math.round(s / 60)} min ago`;
+};
+
+export function buildBanner({ lastLogin = null } = {}) {
   const v = kdaVersion();
   const frag = document.createDocumentFragment();
 
@@ -104,7 +109,11 @@ export function buildBanner() {
   const ver = document.createElement('span');
   ver.className = 'verline-version';
   ver.textContent = `kda-shell ${v} — `;
-  verline.append(ver, document.createTextNode('last login: from somewhere curious'));
+  // a rebooted session knows you: first boot stays curious, returns get greeted
+  const loginText = lastLogin
+    ? `last login: ${relTime(lastLogin)} — welcome back`
+    : 'last login: from somewhere curious';
+  verline.append(ver, document.createTextNode(loginText));
   frag.appendChild(verline);
 
   return frag;

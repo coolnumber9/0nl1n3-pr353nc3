@@ -121,7 +121,10 @@ export function execute(raw, term) {
     case 'logout':
     case 'quit':
       term.printLines([['dim', 'logout']]);
-      setTimeout(() => term.close(), 350);
+      setTimeout(() => {
+        term.close();
+        term.endSession();
+      }, 350);
       return;
 
     default:

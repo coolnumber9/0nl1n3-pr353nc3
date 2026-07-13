@@ -16,9 +16,10 @@ export function initTerminal() {
   const closeBtn = overlay.querySelector('.term-close');
   const cursor = document.getElementById('term-cursor');
 
-  const history = [];
+  const history = []; // survives exit, like .bash_history
   let hIndex = -1;
   let booted = false;
+  let lastLogout = null;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const term = {
@@ -49,14 +50,21 @@ export function initTerminal() {
       overlay.hidden = false;
       if (!booted) {
         booted = true;
-        output.appendChild(buildBanner());
+        output.appendChild(buildBanner({ lastLogin: lastLogout }));
         term.printLines(BOOT);
       }
       input.focus();
     },
     close() {
+      // hides the window; the session (scrollback) persists — see endSession
       overlay.hidden = true;
       chip.focus();
+    },
+    endSession() {
+      // `exit` ends the process: next open is a fresh boot with a new banner
+      lastLogout = Date.now();
+      booted = false;
+      output.innerHTML = '';
     },
   };
 
